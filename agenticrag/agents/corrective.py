@@ -53,7 +53,7 @@ def _get_rag_chain():
         "Answer:"
     )
     prompt = ChatPromptTemplate.from_template(template)
-    chain = prompt | get_llm() | StrOutputParser()
+    chain = prompt | get_llm(provider="gemini") | StrOutputParser()
     return chain
 
 
