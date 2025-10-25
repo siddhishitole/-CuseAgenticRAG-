@@ -11,7 +11,7 @@ console = Console()
 @app.command()
 def main(
     question: str = typer.Argument(None, help="Your question to the agent."),
-    agent: str = typer.Option(None, help="Force a specific agent: corrective"),
+    agent: str = typer.Option(None, help="Force a specific agent: corrective, preact"),
     interactive: bool = typer.Option(False, "--interactive", "-i", help="Interactive chat loop"),
 ):
     if interactive:
@@ -19,8 +19,8 @@ def main(
     if not question:
         console.print("Please provide a question or use --interactive.")
         raise typer.Exit(code=1)
-    if agent and agent not in {"corrective"}:
-        console.print("Invalid agent. Choose from corrective.")
+    if agent and agent not in {"corrective", "preact"}:
+        console.print("Invalid agent. Choose from: corrective, preact")
         raise typer.Exit(code=1)
 
     chosen = agent or choose_agent(question)

@@ -1,18 +1,32 @@
 from __future__ import annotations
 from typing import Literal
-from .agents import build_corrective_rag
+from .agents import build_corrective_rag, build_preact_rag
 from .config import settings
 
 
-AgentName = Literal["corrective"]
+AgentName = Literal["corrective", "preact"]
 
 
 def choose_agent(question: str) -> AgentName:
+    """Choose agent based on question complexity."""
+    # Simple heuristic: use preact for complex multi-step questions
+    keywords = ["step by step", "first", "then", "after that", "plan", "how do i", "explain", "multiple"]
+    question_lower = question.lower()
+    
+    if any(keyword in question_lower for keyword in keywords):
+        return "preact"
+    
     return "corrective"
 
 
 def get_graph(agent: AgentName):
-    return build_corrective_rag()
+    """Get the graph for the specified agent."""
+    if agent == "corrective":
+        return build_corrective_rag()
+    elif agent == "preact":
+        return build_preact_rag()
+    else:
+        raise ValueError(f"Unknown agent: {agent}")
 
 
 def run_agent(question: str, agent: AgentName | None = None) -> str:
