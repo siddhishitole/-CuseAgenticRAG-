@@ -17,7 +17,7 @@ venv/
 .vscode/
 
 # Data & cache
-.data/
+data/
 .cache/
 chromadb/
 

@@ -25,4 +25,8 @@ class Settings:
     perplexity_api_key: str | None = os.getenv("PERPLEXITY_API_KEY")
     perplexity_base_url: str = os.getenv("PERPLEXITY_BASE_URL", "https://api.perplexity.ai")
 
+    sonar_api_key: str | None = os.getenv("SONAR_API_KEY")
+    sonar_base_url: str = os.getenv("SONAR_BASE_URL", "https://api.sonar.workers.dev/v1")
+
+
 settings = Settings()

@@ -35,7 +35,7 @@ def get_llm(provider: Optional[Provider] = None, model: Optional[str] = None) ->
 
         client = ChatGoogleGenerativeAI(
             model=resolved_model,
-            temperature=0.1,
+            temperature=0.5,
             api_key=settings.google_api_key,
         )
         _llm_cache[cache_key] = client
