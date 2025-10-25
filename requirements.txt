@@ -1,0 +1,17 @@
+langchain
+langchain-community
+langchain-text-splitters
+langgraph
+langchain-openai
+chromadb
+pydantic
+python-dotenv
+typer
+rich
+tiktoken
+httpx
+langmem
+pypdf
+langchain-chroma
+pypdf
+langchain-google-genai

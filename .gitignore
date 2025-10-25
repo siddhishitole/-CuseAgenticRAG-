@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.build/
+.dist/
+
+# Virtual envs
+.venv/
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# Data & cache
+.data/
+.cache/
+chromadb/
+
+# Misc files
+*.md
+temp.txt
