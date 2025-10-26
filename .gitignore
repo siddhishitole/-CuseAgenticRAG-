@@ -22,5 +22,5 @@ data/
 chromadb/
 
 # Misc files
-*.md
+# 
 temp.txt
