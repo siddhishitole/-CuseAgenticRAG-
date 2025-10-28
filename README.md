@@ -41,7 +41,7 @@ An intelligent Agentic RAG (Retrieval-Augmented Generation) system with multiple
 
 **1. Clone the repository**
 ```powershell
-git clone https://github.com/vinaytiparadi/CuseAgenticRag.git
+git clone https://github.com/siddhishitole/CuseAgenticRag.git
 cd CuseAgenticRag
 ```
 
